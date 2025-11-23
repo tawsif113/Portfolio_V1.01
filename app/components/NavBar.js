@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const sections = ["about", "skills", "projects", "experience", "contact"];
+const sections = ["about", "experience", "projects", "skills", "contact"];
 
 export default function NavBar() {
   const [active, setActive] = useState("about");
@@ -29,8 +29,8 @@ export default function NavBar() {
 
   return (
     <nav>
-      <div className="container">
-        <span className="badge">Alex Doe</span>
+      <div className="nav-container">
+        <div className="logo">Alex Doe</div>
         <ul>
           {sections.map((section) => (
             <li key={section} className={active === section ? "active" : ""}>
@@ -38,8 +38,8 @@ export default function NavBar() {
             </li>
           ))}
         </ul>
-        <a className="btn" href="#contact">
-          Let’s collaborate
+        <a className="btn" href="mailto:hello@alexd.work">
+          Say hello
         </a>
       </div>
     </nav>
