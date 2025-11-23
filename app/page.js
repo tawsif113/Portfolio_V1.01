@@ -2,6 +2,8 @@ const navLinks = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
+  { id: "skills", label: "Skills" },
+  { id: "contact", label: "Contact" },
 ];
 
 const experiences = [
@@ -59,6 +61,21 @@ const projects = [
       "Reusable UI foundations with accessibility baked in: tokens, primitives, and documentation for product teams.",
     tech: ["React", "Styled Components", "Accessibility"],
     link: "https://github.com/",
+  },
+];
+
+const skills = [
+  {
+    category: "Languages",
+    items: ["JavaScript", "TypeScript", "HTML", "CSS", "SQL"],
+  },
+  {
+    category: "Frameworks",
+    items: ["React", "Next.js", "Node.js", "Express", "GraphQL"],
+  },
+  {
+    category: "Tooling",
+    items: ["Git", "Figma", "Storybook", "Jest", "Cypress"],
   },
 ];
 
@@ -160,6 +177,41 @@ export default function Home() {
                 </a>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="panel" id="skills">
+          <p className="eyebrow">Skills</p>
+          <div className="skills-grid">
+            {skills.map((group) => (
+              <article className="skill-card" key={group.category}>
+                <h3>{group.category}</h3>
+                <div className="tag-row">
+                  {group.items.map((item) => (
+                    <span className="pill" key={item}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="panel" id="contact">
+          <p className="eyebrow">Contact</p>
+          <h3>Want to build something together?</h3>
+          <p className="muted">
+            I’m always open to chatting about new opportunities, collaborations, or side projects. If you have an idea
+            in mind, let’s connect and make it happen.
+          </p>
+          <div className="contact-actions">
+            <a className="btn" href="mailto:hello@alexd.work">
+              Email me
+            </a>
+            <a className="subtle-link" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+              LinkedIn ↗
+            </a>
           </div>
         </section>
       </div>
