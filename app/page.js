@@ -1,171 +1,163 @@
 import NavBar from "./components/NavBar";
 
+const sections = ["about", "experience", "projects"];
+
 const experiences = [
   {
-    company: "Northwind Studio",
-    role: "Lead Product Engineer",
-    period: "2021 — Present",
+    role: "Senior Frontend Engineer, Accessibility",
+    company: "Klaviyo",
+    period: "2020 — Present",
     summary:
-      "Designing and building immersive marketing platforms, shaping the design system, and mentoring designers learning to ship production-grade React.",
+      "Build and maintain critical components used by customers, migrate legacy codebases for better performance, partner with designers to deliver pixel-perfect flows.",
+    tech: ["JavaScript", "TypeScript", "React", "Storybook"],
   },
   {
-    company: "Velocity Labs",
-    role: "Senior Frontend Engineer",
-    period: "2018 — 2021",
+    role: "Frontend Engineer",
+    company: "Hike",
+    period: "2016 — 2020",
     summary:
-      "Scaled UI performance initiatives, delivered interactive storytelling campaigns, and partnered with product to translate complex workflows into calm experiences.",
+      "Designed and developed the group chat experience for messaging apps used by millions of users and added new features and pushed daily patches.",
   },
   {
-    company: "Polygon Studio",
-    role: "Experience Designer",
-    period: "2015 — 2018",
+    role: "Software Engineer",
+    company: "Cadence Design Systems",
+    period: "2014 — 2016",
     summary:
-      "Prototyped AR/VR concepts, built award-winning microsites, and unified brand + engineering across experiential launches.",
+      "Built a robust notification system for medium-large scale enterprises helping them monitor system status with notifications on any channel.",
+  },
+  {
+    role: "Web Developer",
+    company: "Deloitte",
+    period: "2013 — 2014",
+    summary:
+      "Built and maintained UI for enterprise clients. This resulted in better performance and improved UX and UI design. Exposed REST APIs for complex BI systems.",
   },
 ];
 
 const projects = [
   {
-    title: "Lumen Atlas",
+    title: "Design System - Internal Capabilities",
     description:
-      "A data-rich storytelling surface that turns telemetry into living constellations. Built for executives to browse trends without friction.",
-    tech: ["Next.js", "Three.js", "D3"],
-    link: "https://example.com",
+      "Reusable components, tokens, patterns, and documentation that enabled teams to ship consistent experiences faster across the product surface area.",
+    tech: ["React", "CSS Modules", "Storybook", "Figma"],
   },
   {
-    title: "Pulseboard",
+    title: "SEO Management Platform",
     description:
-      "Realtime operations console with adaptive layouts, streaming pipelines, and a humane alerting model.",
-    tech: ["Edge Functions", "React", "WebSockets"],
-    link: "https://example.com",
+      "Multi-view dashboards with friendly UX, sleek UI and elegant multi-page workflows for collaborating with teams on SEO wins.",
+    tech: ["Next.js", "Node.js", "REST"],
   },
   {
-    title: "Auralynx",
+    title: "Quant",
     description:
-      "Audio-reactive visuals for live performances with generative shaders, lighting cues, and collaborative moodboards.",
-    tech: ["WebGL", "Tone.js", "GSAP"],
-    link: "https://example.com",
+      "Experiment tracking and reporting tool built with a huge focus on clean UI and highly interactive data visualisation.",
+    tech: ["React", "D3", "Analytics"],
   },
 ];
 
-const skills = [
-  "Creative frontend engineering",
-  "Design systems & accessibility",
-  "Rapid prototyping",
-  "Interactive storytelling",
-  "Data visualization",
-  "3D & motion design",
-];
+const quickInfo = ["Accessible UIs", "Pixel-perfect", "Engineer"];
 
 export default function Home() {
   return (
     <>
       <NavBar />
-      <main className="page">
-        <section className="intro" id="about">
-          <p className="eyebrow">Hi, my name is</p>
-          <h1>Alex Doe.</h1>
-          <h2>I build thoughtful digital experiences.</h2>
-          <p className="lede">
-            I’m a product-focused engineer crafting immersive, accessible interfaces. From design systems to
-            narrative-rich prototypes, I translate complex ideas into calm, performant experiences.
-          </p>
-          <div className="cta-row">
-            <a className="btn" href="mailto:hello@alexd.work">
-              Say hello
-            </a>
-            <a className="ghost-btn" href="#projects">
-              View work
-            </a>
-          </div>
-          <div className="pill-row">
-            <span className="pill">Currently at Northwind Studio</span>
-            <span className="pill">Open for select collaborations</span>
-          </div>
-        </section>
-
-        <section className="section" id="experience">
-          <div className="section-header">
-            <p className="eyebrow">Experience</p>
-            <h3>Places I’ve crafted interfaces</h3>
-          </div>
-          <div className="stacked-cards">
-            {experiences.map((item) => (
-              <article className="line-card" key={item.company}>
-                <header>
-                  <div>
-                    <p className="eyebrow">{item.company}</p>
-                    <h4>{item.role}</h4>
-                  </div>
-                  <span className="period">{item.period}</span>
-                </header>
-                <p>{item.summary}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section" id="projects">
-          <div className="section-header">
-            <p className="eyebrow">Selected work</p>
-            <h3>Interactive stories and product surfaces</h3>
-            <p className="muted">A few highlights from recent collaborations and experiments.</p>
-          </div>
-          <div className="project-grid">
-            {projects.map((project) => (
-              <article className="project-card" key={project.title}>
-                <header>
-                  <h4>{project.title}</h4>
-                  <a href={project.link} target="_blank" rel="noreferrer">
-                    View ↗
-                  </a>
-                </header>
-                <p>{project.description}</p>
-                <div className="tag-row">
-                  {project.tech.map((tag) => (
-                    <span className="pill" key={tag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section" id="skills">
-          <div className="section-header">
-            <p className="eyebrow">Toolkit</p>
-            <h3>What I’m comfortable with</h3>
+      <main className="shell">
+        <section className="about-panel" id="about">
+          <div className="about-header">
+            <p className="role-pill">Front End Engineer</p>
+            <h1>Brittany Chiang</h1>
+            <h2>I build accessible, pixel-perfect digital experiences for the web.</h2>
             <p className="muted">
-              A mix of engineering, design, and storytelling skills that help ship experiences from sketch to scale.
+              I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend design with
+              robust engineering. I love the intersection of design and development, and creating accessible, inclusive,
+              and performant experiences that combine thoughtful UX/UI with robust engineering under the hood.
             </p>
+            <p className="muted">
+              Currently, I'm a Senior Front End Engineer at <strong>Klaviyo</strong>, specializing in accessibility.
+              I do everything from strategy to execution and maintenance of UX components and patterns across Klaviyo's
+              frontend codebase to empower our users with accessible designs and robust practices to deliver inclusive
+              experiences for all users.
+            </p>
+            <div className="button-row">
+              <a className="btn" href="mailto:hello@alexd.work">
+                Hire Me
+              </a>
+              <a className="ghost-btn" href="#experience">
+                Access my experience
+              </a>
+            </div>
           </div>
-          <div className="tag-grid">
-            {skills.map((skill) => (
-              <span className="pill" key={skill}>
-                {skill}
+
+          <div className="divider" />
+
+          <div className="nav-links">
+            <p className="muted">Navigation</p>
+            <ul>
+              {sections.map((section) => (
+                <li key={section}>
+                  <a href={`#${section}`}>{section.charAt(0).toUpperCase() + section.slice(1)}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="quick-info">
+            {quickInfo.map((info) => (
+              <span className="pill" key={info}>
+                {info}
               </span>
             ))}
           </div>
         </section>
 
-        <section className="section" id="contact">
-          <div className="section-header">
-            <p className="eyebrow">Contact</p>
-            <h3>Let’s make something meaningful</h3>
-            <p className="muted">
-              I’m always excited to collaborate on thoughtful products, immersive storytelling, and design systems.
-            </p>
-          </div>
-          <div className="cta-row">
-            <a className="btn" href="mailto:hello@alexd.work">
-              Start a conversation
-            </a>
-            <a className="ghost-btn" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-              Connect on LinkedIn
-            </a>
-          </div>
+        <section className="content">
+          <section className="section" id="experience">
+            <div className="section-header">
+              <p className="eyebrow">EXPERIENCE</p>
+            </div>
+            <div className="timeline">
+              {experiences.map((item) => (
+                <article className="timeline-item" key={item.company}>
+                  <header>
+                    <p className="period">{item.period}</p>
+                    <h4>{item.role}</h4>
+                    <p className="company">{item.company}</p>
+                  </header>
+                  <p className="muted">{item.summary}</p>
+                  {item.tech && (
+                    <div className="tag-row">
+                      {item.tech.map((tag) => (
+                        <span className="pill" key={tag}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="section" id="projects">
+            <div className="section-header">
+              <p className="eyebrow">PROJECTS</p>
+            </div>
+            <div className="project-grid">
+              {projects.map((project) => (
+                <article className="project-card" key={project.title}>
+                  <p className="muted">{project.description}</p>
+                  <h4>{project.title}</h4>
+                  <div className="tag-row">
+                    {project.tech.map((tag) => (
+                      <span className="pill" key={tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
         </section>
       </main>
     </>

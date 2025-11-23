@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const sections = ["about", "experience", "projects", "skills", "contact"];
+const sections = ["about", "experience", "projects"];
 
 export default function NavBar() {
   const [active, setActive] = useState("about");
@@ -30,7 +30,7 @@ export default function NavBar() {
   return (
     <nav>
       <div className="nav-container">
-        <div className="logo">Alex Doe</div>
+        <div className="logo">Brittany Chiang</div>
         <ul>
           {sections.map((section) => (
             <li key={section} className={active === section ? "active" : ""}>
@@ -39,7 +39,7 @@ export default function NavBar() {
           ))}
         </ul>
         <a className="btn" href="mailto:hello@alexd.work">
-          Say hello
+          Hire Me
         </a>
       </div>
     </nav>
